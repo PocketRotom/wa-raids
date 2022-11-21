@@ -1,0 +1,14 @@
+{
+  "name": "discord_raids",
+  "version": "1.0.0",
+  "description": "Bot to share discord raids",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pocket Rotom",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.28.0"
+  }
+}
