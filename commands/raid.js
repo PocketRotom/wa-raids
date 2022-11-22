@@ -6,7 +6,7 @@ module.exports = {
 		.setDescription("Start a Raid")
 		.addStringOption((option) =>
 			option
-				.setName("code-8-digits")
+				.setName("code-6-digits")
 				.setDescription("The code you will use on the raid")
 				.setRequired(true)
 		)
@@ -58,7 +58,7 @@ module.exports = {
 				)
 		),
 	async execute(interaction) {
-		const code = interaction.options.getString("code-8-digits")
+		const code = interaction.options.getString("code-6-digits")
 		const pokemon = interaction.options.getString("pokemon")
 		const teratype = interaction.options.getString("teratype")
 		const raidlevel = interaction.options.getString("raidlevel")
