@@ -62,8 +62,34 @@ module.exports = {
 		const pokemon = interaction.options.getString("pokemon")
 		const teratype = interaction.options.getString("teratype")
 		const raidlevel = interaction.options.getString("raidlevel")
-		await interaction.reply(
-			`Starting a Lv ${raidlevel} raid of ${pokemon} with ${teratype} terastal, with code ${code}`
-		)
+		let exampleEmbed = {
+			author: { name: interaction.user.username },
+			image: {
+				url: `https://play.pokemonshowdown.com/sprites/gen5/${pokemon.toLowerCase()}.png`,
+			},
+			description: `Código ${code}`,
+			fields: [
+				{
+					name: "Pokémon",
+					value: pokemon.charAt(0).toUpperCase() + pokemon.slice(1),
+					inline: true,
+				},
+				{ name: "Raid Level", value: `Level ${raidlevel}`, inline: true },
+				{ name: "Teratype", value: teratype, inline: true },
+				{
+					name: "Hosted by",
+					value: `<@${interaction.user.id}>`,
+				},
+			],
+			footer: {
+				text: `WA Raids`,
+				icon_url:
+					"https://cdn.discordapp.com/attachments/673155314912329730/1044317006595358751/Wild_Area_Logo-avatar.png",
+			},
+		}
+		await interaction.reply({
+			embeds: [exampleEmbed],
+			content: "<@&673526130304614402>",
+		})
 	},
 }
